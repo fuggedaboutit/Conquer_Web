@@ -23,7 +23,7 @@
 ![image](https://user-images.githubusercontent.com/75282888/118451119-de8c1380-b72f-11eb-82d2-fe489a3b2384.png)
 
 0. Hypertext Transfer Protocol Secure의 약자이다.
-1. HTTP의 보안 문제를 해결하기 위해 **SSL인증서(**Secure sockets layer certificate)을 사용한다.
+1. HTTP의 보안 문제를 해결하기 위해 **SSL인증서**(Secure sockets layer certificate)을 사용한다.
 2. SSL 인증서는 서버와 브라우저 사이 암호화된 보안망을 구축하는 것을 돕는다.
 3. SSL인증서는 유저가 사이트에 제공하는 정보를 암호화한다. 데이터를 코드로 변환하는 방식을 사용한다.
 4. 또한 HTTPS는 **TLS**(Transport Layer Security)프로토콜을 통해 암호화된다.
