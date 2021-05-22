@@ -81,7 +81,9 @@ Web에 종사하는 모든 사람에게 **대가 없이** 정보를 제공합니
 
 대다수가 공증한 믿을 수 있는 약속을 지킨다는 것입니다.
 
-https://user-images.githubusercontent.com/77006427/119230570-c9f8b280-bb57-11eb-9c88-ad76784a60b4.gif
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/77006427/119230570-c9f8b280-bb57-11eb-9c88-ad76784a60b4.gif"/>
+</p>
 
 >개인적인 탁's 사견
 >
