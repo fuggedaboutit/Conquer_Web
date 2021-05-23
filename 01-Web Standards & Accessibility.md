@@ -181,9 +181,9 @@ aria-label에 만 적는 내용에 접근하면,
 
 
 References: 
-- https://www.keycdn.com/blog/web-standards
-- https://www.smashingmagazine.com/2019/01/web-standards-guide/
-- https://en.wikipedia.org/wiki/Web_standards
-- https://www.youtube.com/watch?v=Wb2X9kYEvXc
-- https://webaim.org/techniques/screenreader/
-- https://www.w3.org/WAI/standards-guidelines/wcag/
+- [Web Standards Keys](https://www.keycdn.com/blog/web-standards)
+- [Web Standards Guide](https://www.smashingmagazine.com/2019/01/web-standards-guide/) 
+- [Wiki Web Standards](https://en.wikipedia.org/wiki/Web_standards) 
+- [Creating an Accessible Digital Future](https://www.youtube.com/watch?v=Wb2X9kYEvXc) 
+- [Screenreader](https://webaim.org/techniques/screenreader/) 
+- [WAI/standards-guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) 
