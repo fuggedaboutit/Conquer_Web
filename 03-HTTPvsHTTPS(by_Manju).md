@@ -44,7 +44,7 @@
 
 <br>
 
-## 😮 What is SSL of TLS?
+## 😮 What is SSL or TLS?
 
 <br>
 
