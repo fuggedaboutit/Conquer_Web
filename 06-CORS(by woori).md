@@ -109,7 +109,6 @@ app.listen(5000);
 Origin: https://....
 Access-Control-Request-Method: PUT
 Access-Control-Request-Headers: Special-Request-Header
-......
 ```
 
 그리고 서버는 사전 요청에 대해서 Access-Control-Allow-Methods, Access-Control-Allow-Headers를 담은 응답을 보내줄 것입니다.   
@@ -120,7 +119,6 @@ Access-Control-Allow-Methods: GET, PUT, POST, DELETE
 Access-Control-Allow-Headers: Special-Request-Header
 Access-Control-Allow-Credentials: true
 Access-Control-Max-Age: 240
-......
 ```
 이렇게 응답이 왔다면, 이것은 GET, PUT, POST, DELETE 메소드 그리고 request header가 Special-Request-Header인 경우 CORS를 허용하겠다는 것입니다.   
 즉 브라우저는 사전 요청을 통해 CORS protocol이 cross-origin request를 허용하기 전, 어떠한 methods와 headers가 허용되어 있는지 확인을 하게 됩니다.   
