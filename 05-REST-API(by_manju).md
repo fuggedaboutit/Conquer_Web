@@ -97,7 +97,7 @@ REST API는 **`Resource(자원)`, `Verb(행위)`, `Representation(표현)`** 의
     GET / todos / show / 1;
 
     //good
-    GET / todos / show / 1;
+    GET / todos / 1;
     ```
 
     <br>
