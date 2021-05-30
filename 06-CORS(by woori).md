@@ -12,13 +12,12 @@
 그런데 만약 자바스크립트에서 다른 서버에 데이터를 무차별적으로 요청하고 받아올 수 있게 되면 어떻게 될까요?
 
 특정 소셜 미디어에 로그인이 된 상태로, 다른 탭을 열어서 이상한 악성 사이트에 접속하게 되어 버렸다고 가정해 봅시다.   
-이 경우 악성 사이트의 자바스크립트는 브라우저에 심어져 있는 쿠키의 정보를 요청하는 등의 방법을 통해 계정 정보에 접근 할 수 있고   
+이 경우 악성 사이트의 자바스크립트는 브라우저에 심어져 있는 쿠키의 정보를 읽고 가져오는 방법을 통해 계정 정보에 접근 할 수 있고   
 메세지나 포스팅 등의 정보도 통제할 수 있게 되어버립니다.   
 만약 은행 정보라면 더욱 끔찍한 상황이겠죠?   
 
-이러한 이유로 서로 다른 origin을 가진 클라이언트와 서버간의 리소스 교환을 통제함으로써 자바스크립트에서 함부로 데이터를   
-요청할 수 없도록 할 필요가 있습니다.
-
+따라서 서로 다른 origin을 가진 클라이언트와 서버간의 리소스 교환을 통제함으로써 자바스크립트에서 함부로 데이터를   
+가져올 수 없도록 할 필요가 있습니다. 그리고 바로 이러한 문제를 방지하기 위해 SOP가 등장합니다.
 <br>
 
 ## SOP(Same-Origin Policy) - 동일 출처 정책
@@ -41,8 +40,13 @@ SOP(Same-Origin Policy)은 어떤 origin에서 불러온 문서나 스크립트�
 
 ## CORS
 
-Cors 는 Cross Origin Resource Sharing의 약자로서, http header를 통해 브라우저에게 다른 origin과도 리소스에 접근하고 교환할 수 있도록 해주는 체제입니다.   
-서로 다른 origin을 가지고 있더라도 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 다른 origin을 가진 리소스를 교환할 수 있게 됩니다.     
+Cors 는 Cross Origin Resource Sharing의 약자로서, 서로 다른 origin 사이에도 리소스에 접근하고 교환할 수 있도록 해주는 체제입니다.   
+
+> 보통 Cross-origin embedding은 허용됩니다.(https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+
+이렇게 Embading은 비교적 자유롭게 사용할 수 있지만, 중요하게 봐야할 것은 "cross-origin Ajax requests(or http request)" 입니다.   
+보안 때문에 디폴트로 origin이 다르다면 비동기 요청은 제한됩니다.   
+하지만 서로 다른 origin을 가지고 있더라도 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 다른 origin을 가진 리소스를 교환할 수 있게 됩니다.     
 
 여기까지 따라왔다면 앞의 CORS error의 내용을 이해할 수 있게 됩니다.
 앞의 CORS error를 다시 살펴보면 http://localhost:3000 라는 origin에서 이와 다른 origin을 가진 서버에 요청을 했다는 것을 알 수 있습니다.
@@ -142,7 +146,12 @@ app.use(cors({
 
 app.listen(5000);
 ```
-allowedHeaders를 설정하지 않으면 자동적으로 Access-Control-Request-Headers에 있는 값으로 설정될 것이기 떄문에, 보통 따로 설정해주지 않는다고 합니다.
+allowedHeaders를 설정하지 않으면 자동적으로 Access-Control-Request-Headers에 있는 값으로 설정될 것이기 떄문에, 보통 따로 설정해주지 않는다고 합니다.   
+
+지금까지 살펴본 내용의 전체적인 Flow를 살펴보면 다음과 같습니다.   
+
+![330px-Flowchart_showing_Simple_and_Preflight_XHR svg](https://user-images.githubusercontent.com/53216594/120102007-f5952180-c183-11eb-9532-7cc155e691d9.png)   
+(이미지 출처: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 
 <br>
 
