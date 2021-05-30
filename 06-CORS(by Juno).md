@@ -280,6 +280,8 @@ fetch("https://evan-moon.github.io/feed.xml", {
 
 - 응답헤더에는 Access-Control-Allow-Credentials:가 존재해야한다.
 
+<br/>
+
 ## **4. 🎉 결론**
 
 <br/>
