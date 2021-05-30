@@ -245,7 +245,7 @@ X-UA-Compatible: IE=Edge
 - accept, accept-language, content-language, content-type, DPR,Downlink,Save-Data, Viewport-Width, Width를 제외한 헤더를 사용하면안된다.  
   (이부분 때문에 인증관련의 jwt사용이 불가하다.)
 
-- ontent-type를 사용하는 경우 application/x-www-form-urlencoded, multipart/form-data, text/plain만 허용된다.
+- content-type를 사용하는 경우 application/x-www-form-urlencoded, multipart/form-data, text/plain만 허용된다.
   (현재는 Rest API를 사용하며 application/json을 사용하나 여기에는 해당하지 않기에 실질적으로 이부분은 보기 힘들다.)
 
 <br/>
