@@ -22,11 +22,7 @@
 <br>
 
 ## SOP(Same-Origin Policy) - 동일 출처 정책
-SOP(Same-Origin Policy)은 어떤 origin에서 불러온 문서나 스크립트가 다른 origin에서 리소스를 불러오는 것을 제한하는 내용을 담고 있습니다.   
-이러한 SOP 정책으로 인해서 CORS Error가 발생하게 되는 것입니다.   
-
-그렇다면 앞의 CORS error를 다시 살펴보면 http://localhost:3000 라는 origin에서 이와 다른 origin을 가진 서버에 요청을 했기 때문에 발생한 것입니다.   
-그 밑의 것 역시 마찬가지입니다. https://localhost:3001 라는 origin에서 이와 다른 origin을 가진 서버에 요청을 했기 때문에 발생한 것입니다.   
+SOP(Same-Origin Policy)은 어떤 origin에서 불러온 문서나 스크립트가 다른 origin에서 리소스를 불러오는 것을 제한하는 내용을 담고 있습니다.    
 
 그런데 다른 origin으로부터 리소스를 요청해야하는 경우는 반드시 생기기 때문에 항상 SOP를 지키면서 데이터를 교환하는 것은 사실상 불가능합니다.   
 풀스택으로 웹 개발을 하는 단계에서 바로 CORS error를 마주하게 될 것입니다.   
@@ -46,21 +42,28 @@ SOP(Same-Origin Policy)은 어떤 origin에서 불러온 문서나 스크립트�
 ## CORS
 
 Cors 는 Cross Origin Resource Sharing의 약자로서, http header를 통해 브라우저에게 다른 origin과도 리소스에 접근하고 교환할 수 있도록 해주는 체제입니다.   
-서로 다른 origin을 가지고 있더라도 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 다른 origin을 가진 리소스를 교환할 수 있게 됩니다.   
+서로 다른 origin을 가지고 있더라도 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 다른 origin을 가진 리소스를 교환할 수 있게 됩니다.     
 
-여기까지 따라왔다면 앞의 CORS error의 내용을 이해할 수 있게 됩니다.   
-cors error의 내용을 보면 NO 'Access-Control-Allow-Origin' header is present on the requested resourse라는 문구가 있습니다.   
+여기까지 따라왔다면 앞의 CORS error의 내용을 이해할 수 있게 됩니다.
+앞의 CORS error를 다시 살펴보면 http://localhost:3000 라는 origin에서 이와 다른 origin을 가진 서버에 요청을 했다는 것을 알 수 있습니다.
+그 밑의 것 역시 마찬가지입니다. https://localhost:3001 라는 origin에서 이와 다른 origin을 가진 서버에 요청을 했습니다.   
+
+CORS 정책으로 인해서 서로 다른 origin간 리소스를 교환할 수 있긴하지만, CORS Error가 발생한 이유는 CORS 조항의 어떤 것을 위반했기 때문입니다. 어떤 것을 위반한 것일까요?
+
+CORS error의 내용을 보면 NO 'Access-Control-Allow-Origin' header is present on the requested resourse라는 문구가 있습니다.   
 이것을 해석해보면 requested resourse, 즉 요청된 리소스(서버 측)에 'Access-Control-Allow-Origin'이라는 header가 표시되지 않았다고 하고 있습니다.   
 
-앞서 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 서로 다른 origin끼리 리소스를 교환할 수 있다고 했는데,   
-"서버가 올바른 CORS header('Access-Control-Allow-Origin')를 표시하고 있지 않으니 CORS를 하려면 서버 측에 올바른 header를 표시해!"라는 의미입니다.   
+즉 이 에러메세지는 "서버가 올바른 CORS header('Access-Control-Allow-Origin')를 표시하고 있지 않으니 CORS를 하려면 서버 측에 올바른 header를 표시해!"라고 말하는 것입니다.    
+
+정리하자면 CORS error는 서버가 올바른 CORS header를 포함하고 있는 경우에 한정해서 서로 다른 origin끼리 리소스를 교환할 수 있는데,   
+서버 측에 올바른 CORS header를 포함하지 않았기 때문에 발생한 것입니다.   
 
 CORS와 관련해서 마지막으로 짚고 넘어가고 싶은 점이 있는데, 바로 Cors Error가 마치 서버 측에서 보낸 에러같지만 사실 이것은 브라우저에서 발생한 에러라는 것입니다.   
 자바스크립트에서 XMLHttpRequest 또는 Fetch를 통해 요청이 이루어졌다고 가정해봅시다.   
 브라우저는 해당 http요청이 CORS 정책의 검증을 해야하는지 판단합니다. 만약 안전하지 않은 cross-origin request라고 판단한 경우, CORS검증을 하도록 서버에 요청을 하게 됩니다.   
 (이 요청을 Preflight Request이라고 하는데 조금 뒤에 자세하게 나옵니다.)
 브라우저는 서버에게서 받은 응답을 살피고 CORS검증에 실패했다면 CORS error를 발생시킵니다.   
-즉 브라우저가 response object가 적절한 header를 가지고 있는지 살피고, 그렇지 않다면 Server로 부터의 응답을 block 하는 것입니다.
+즉 브라우저가 response object가 적절한 header를 가지고 있는지 살피고, 그렇지 않다면 서버로부터의 응답을 block 하는 것입니다.
 
 <br>
 
