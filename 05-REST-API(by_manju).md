@@ -14,7 +14,7 @@ REST는 `REpresentational State Transfer` 의 약자로 웹이 HTTP를 제대로
 
 다시 정리하면
 
-REST는 <span style="color:orange; font-weight:bold;"> `**HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method를 통해 Resource를 처리하도록 설계된 아키텍쳐**` </span>이고,
+REST는 <span style="color:orange; font-weight:bold;"> **`HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method를 통해 Resource를 처리하도록 설계된 아키텍쳐`** </span>이고,
 
 REST API는 <span style="color:orange"> **`REST를 기반으로 서비스 API를 구현한 것`** </span>을 의미합니다!!
 
