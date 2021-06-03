@@ -78,5 +78,7 @@
 - 참조
 
   <HTML5+CSS3+JavaScript로 배우는 웹 프로그래밍 기초> 천인국 저.
+
   [https://developing-move.tistory.com/8](https://developing-move.tistory.com/8)
+
   [https://soeunlee.medium.com/web%EC%97%90%EC%84%9C-png-gif-jpeg-svg-%EC%A4%91-%EC%96%B4%EB%96%A4-%EA%B2%83%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%A9%B4-%EC%A2%8B%EC%9D%84%EA%B9%8C%EC%9A%94-6937300e776e](https://soeunlee.medium.com/web%EC%97%90%EC%84%9C-png-gif-jpeg-svg-%EC%A4%91-%EC%96%B4%EB%96%A4-%EA%B2%83%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%A9%B4-%EC%A2%8B%EC%9D%84%EA%B9%8C%EC%9A%94-6937300e776e)
