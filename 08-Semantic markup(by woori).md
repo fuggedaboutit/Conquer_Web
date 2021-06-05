@@ -142,6 +142,6 @@ blockquote and q: The blockquote and q (quote) elements are used to identify tex
 
 <br>
 
-참고: https://developer.mozilla.org/ko/docs/Web/HTML/Element
+참고: https://developer.mozilla.org/ko/docs/Web/HTML/Element  
 (출처: https://html.com/semantic-markup/, 
 https://developer.mozilla.org/ko/docs/Web/HTML/Element)
